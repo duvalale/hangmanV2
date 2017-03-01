@@ -23,4 +23,8 @@ services:
     app.gameRunner:
         class: AppBundle\Game\GameRunner
         arguments: ["@app.gameContext", "@app.wordList"]
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.listener.openClose:
+        class: AppBundle\EventListener\OpenCloseListener
+        arguments: ["@twig"]
+        tags:
+            - {name: kernel.event_subscriber}
