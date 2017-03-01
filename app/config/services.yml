@@ -4,6 +4,23 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
+    app.wordList:
+        class: AppBundle\Game\WordList
+        calls:
+            - [addLoader, ['txt', '@app.textFileLoader']]
+            - [addLoader, ['xml', '@app.xmlFileLoader']]
+            - [addWord, ['customer']]
+            - [addWord, ['lemonade']]
+            - [addWord, ['employee']]
+            - [loadDictionaries, ['%dictionaries%']]
+    app.textFileLoader:
+        class: AppBundle\Game\Loader\TextFileLoader
+    app.xmlFileLoader:
+        class: AppBundle\Game\Loader\XmlFileLoader
+    app.gameContext:
+        class: AppBundle\Game\GameContext
+        arguments: ["@session"]
+    app.gameRunner:
+        class: AppBundle\Game\GameRunner
+        arguments: ["@app.gameContext", "@app.wordList"]
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

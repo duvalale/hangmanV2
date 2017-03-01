@@ -115,17 +115,6 @@ class GameController extends Controller
 
     private function createGameRunner($withWordList = false)
     {
-        $wordList = null;
-        if ($withWordList) {
-            $wordList = new WordList();
-            $wordList->addLoader('txt', new TextFileLoader());
-            $wordList->addLoader('xml', new XmlFileLoader());
-            $wordList->addWord('customer');
-            $wordList->addWord('lemonade');
-            $wordList->addWord('employee');
-            $wordList->loadDictionaries($this->getParameter('dictionaries'));
-        }
-
-        return new GameRunner(new GameContext($this->get('session')), $wordList);
+        return $this->get('app.gameRunner');
     }
 }
