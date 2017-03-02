@@ -1,6 +1,10 @@
 imports:
     - { resource: config_dev.yml }
 
+parameters:
+    dictionaries:
+        - "%kernel.root_dir%/Resources/data/test.txt"
+
 framework:
     test: ~
     session:

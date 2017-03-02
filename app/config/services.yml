@@ -9,9 +9,6 @@ services:
         calls:
             - [addLoader, ['txt', '@app.textFileLoader']]
             - [addLoader, ['xml', '@app.xmlFileLoader']]
-            - [addWord, ['customer']]
-            - [addWord, ['lemonade']]
-            - [addWord, ['employee']]
             - [loadDictionaries, ['%dictionaries%']]
     app.textFileLoader:
         class: AppBundle\Game\Loader\TextFileLoader
