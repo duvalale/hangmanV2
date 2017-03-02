@@ -20,7 +20,7 @@ class OpenCloseListener implements EventSubscriberInterface {
             return;
         }
         $h = date('H');
-        if (20 >=  $h && $h <= 8) {
+        if (20 <=  $h || $h >= 8) {
             return;
         }
 
