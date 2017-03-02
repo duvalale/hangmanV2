@@ -7,12 +7,16 @@
 {% block subtitle 'login.subtitle'|trans %}
 
 {% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
     <form action="{{ path('app_login_check') }}" method="post">
         <label for="username">{{ 'login.username'|trans }}</label>
-        <input type="text" id="username" name="my_login" value="" />
+        <input type="text" id="username" name="_username" value="" />
 
         <label for="password">{{ 'login.password'|trans }}</label>
-        <input type="password" id="password" name="my_secret" />
+        <input type="password" id="password" name="_password" />
 
         <button type="submit">{{ 'login.submit'|trans }}</button>
     </form>
