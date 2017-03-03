@@ -13,6 +13,14 @@
         <source>signup.subtitle</source>
         <target>Free registration</target>
       </trans-unit>
+      <trans-unit id="3cffdbb8528a93e6dc87e19c007734af" resname="edit.title">
+        <source>edit.title</source>
+        <target>Edit account</target>
+      </trans-unit>
+      <trans-unit id="2f710ccd3c6a00cfa6145962e93019c7" resname="edit.subtitle">
+        <source>edit.subtitle</source>
+        <target>Edit account</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

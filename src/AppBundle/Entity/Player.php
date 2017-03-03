@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -42,11 +43,20 @@ class Player implements UserInterface
 
     /**
      * not saved in DB
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"Registration"})
      * @Assert\Length(max = 255)
      * @var string
      */
     private $rawPassword;
+
+
+    /**
+     * @var
+     * @Assert\NotBlank()
+     * @Assert\Date()
+     * @ORM\Column(name="birthday", type="date", nullable=true)
+     */
+    private $birthday;
 
 
     /**
@@ -139,5 +149,20 @@ class Player implements UserInterface
     }
 
 
+    /**
+     * @return mixed
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @param mixed $birthday
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
 }
 

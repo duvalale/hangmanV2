@@ -2,18 +2,16 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Game\GameContext;
-use AppBundle\Game\GameRunner;
-use AppBundle\Game\Loader\TextFileLoader;
-use AppBundle\Game\Loader\XmlFileLoader;
-use AppBundle\Game\WordList;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+
 /**
  * @Route("/game")
+ * @Security("is_granted('PLAY_GAME')")
  */
 class GameController extends Controller
 {

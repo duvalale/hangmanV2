@@ -25,3 +25,9 @@ services:
         arguments: ["@twig"]
         tags:
             - {name: kernel.event_subscriber}
+    app.security.voter:
+        class: AppBundle\Security\PlayerVoter
+        public: false
+        arguments: ['@security.access.decision_manager']
+        tags:
+            - { name: security.voter }

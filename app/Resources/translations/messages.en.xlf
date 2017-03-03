@@ -39,6 +39,10 @@
         <source>menu.logout</source>
         <target>Logout</target>
       </trans-unit>
+      <trans-unit id="3cffdbb8528a93e6dc87e19c007734af" resname="menu.edit">
+        <source>menu.edit</source>
+        <target>Edit account</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

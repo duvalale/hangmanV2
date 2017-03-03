@@ -8,6 +8,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,6 +19,7 @@ class PlayerType extends AbstractType {
         $builder
             ->add('username')
             ->add('rawPassword', PasswordType::class, ['label' => 'Password'])
+            ->add('birthday', BirthdayType::class)
             ->add('Register', SubmitType::class)
         ;
     }
