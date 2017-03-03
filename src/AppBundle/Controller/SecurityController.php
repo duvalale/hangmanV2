@@ -15,6 +15,10 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
+        if ($this->getUser()) {
+            // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
+            return $this->redirectToRoute('app_edit');
+        }
         $authenticationUtils = $this->get('security.authentication_utils');
 
         // get the login error if there is one

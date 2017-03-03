@@ -22,7 +22,7 @@ security:
             form_login:
                login_path: app_login
                check_path: app_login_check
-               default_target_path: app_game_play
+               default_target_path: app_edit
             logout:
                 path: app_logout
                 target: app_login
