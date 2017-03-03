@@ -12,8 +12,12 @@ services:
             - [loadDictionaries, ['%dictionaries%']]
     app.textFileLoader:
         class: AppBundle\Game\Loader\TextFileLoader
+        tags:
+            - {name: hangman.loader, type: txt}
     app.xmlFileLoader:
         class: AppBundle\Game\Loader\XmlFileLoader
+        tags:
+            - {name: hangman.loader, type: xml}
     app.gameContext:
         class: AppBundle\Game\GameContext
         arguments: ["@session"]
