@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Access denied
+{% endblock %}
+
+{% block body %}
+    <h1>Oops .... Access denied !!</h1>
+
+    <p>
+        {{ status_code }} {{ status_text }}
+    </p>
+
+    <p>
+        {{ exception.message }}
+    </p>
+
+{% endblock %}
