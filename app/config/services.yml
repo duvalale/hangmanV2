@@ -7,8 +7,6 @@ services:
     app.wordList:
         class: AppBundle\Game\WordList
         calls:
-            - [addLoader, ['txt', '@app.textFileLoader']]
-            - [addLoader, ['xml', '@app.xmlFileLoader']]
             - [loadDictionaries, ['%dictionaries%']]
     app.textFileLoader:
         class: AppBundle\Game\Loader\TextFileLoader
