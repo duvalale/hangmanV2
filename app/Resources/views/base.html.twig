@@ -40,6 +40,7 @@
                     {% block body %}{% endblock %}
                 </div>
                 <div id="sidebar">
+                    {{ render_esi(controller('AppBundle:Sidebar:time')) }}
                     {{ render(controller('AppBundle:Sidebar:listLastGames')) }}
                     {{ render(controller('AppBundle:Sidebar:listLastUsers')) }}
                 </div>
